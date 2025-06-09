@@ -1,3 +1,4 @@
+import { url } from 'inspector'
 import React, { ReactNode } from 'react'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
 
@@ -10,10 +11,13 @@ const rem = (px: number) => `${round(px / 16)}rem`
 
 export const theme: DefaultTheme = {
   colors: {
+    bgColor: '#f8f9fa',
     white: '#FFFFFF',
-    black: '#0C0D0F',
+    black1: 'rgba(0, 0, 0, 0.9)',
+    black2: 'rgba(0, 0, 0, 0.55)',
+    black3: 'rgba(0,0,0,.1)',
     red: '#E03131',
-    orange: '#E8590C',
+    orange: '#F46A05',
     yellow: '#FCC419',
     green: '#23DB42',
     teal: '#89DD13',
@@ -32,12 +36,13 @@ export const theme: DefaultTheme = {
     gray800: '#1D1E21',
     gray900: '#141518',
     primary: '#F83600',
-    secondary: '#FE8C00',
+    secondary: '#D85F08',
   },
   fontFamily: {
     heading: ['IBM Plex Sans', 'sans-serif'].join(','),
     sans: ['Open Sans', 'Arial', 'Helvetica', 'sans-serif'].join(','),
     mono: ['IBM Plex Mono', 'serif'].join(','),
+    ruda: ['Ruda', 'sans-serif'].join(',')
   },
   fontSize: {
     xs: rem(10),
@@ -50,6 +55,17 @@ export const theme: DefaultTheme = {
     '3xl': rem(32),
     '4xl': rem(40),
     '5xl': rem(64),
+  },
+  fontWeight: {
+    hairline: 100,
+    thin: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
   },
 }
 

@@ -5,8 +5,11 @@ declare module 'styled-components' {
     borderRadius?: string
 
     colors: {
+      bgColor: string
       white: string
-      black: string
+      black1: string
+      black2: string
+      black3: string
       red: string
       orange: string
       yellow: string
@@ -33,6 +36,7 @@ declare module 'styled-components' {
       heading: string
       sans: string
       mono: string
+      ruda: string
     }
     fontSize: {
       xs: string
@@ -46,5 +50,16 @@ declare module 'styled-components' {
       '4xl': string
       '5xl': string
     }
+    fontWeight: {
+      hairline: integer,
+      thin: integer,
+      light: integer,
+      normal: integer,
+      medium: integer,
+      semibold: integer,
+      bold: integer,
+      extrabold: integer,
+      black: integer,
+    },
   }
 }
