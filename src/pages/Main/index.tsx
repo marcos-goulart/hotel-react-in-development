@@ -6,8 +6,8 @@ import { Container } from './styles'
 export default function Main() {
   return (
     <Container>
-        <Navbar/>
-        <Banner/>
+      <Navbar />
+      <Banner />
     </Container>
   )
 }

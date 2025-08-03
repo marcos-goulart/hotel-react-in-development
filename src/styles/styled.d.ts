@@ -5,13 +5,17 @@ declare module 'styled-components' {
     borderRadius?: string
 
     colors: {
+      phColor: string
       bgColor: string
+      bgBrown1: string
+      bgBrown2: string
       white: string
       black1: string
       black2: string
       black3: string
       red: string
       orange: string
+      orange2: string
       yellow: string
       green: string
       teal: string
@@ -30,7 +34,6 @@ declare module 'styled-components' {
       gray800: string
       gray900: string
       primary: string
-      secondary: string
     }
     fontFamily: {
       heading: string
@@ -51,15 +54,24 @@ declare module 'styled-components' {
       '5xl': string
     }
     fontWeight: {
-      hairline: integer,
-      thin: integer,
-      light: integer,
-      normal: integer,
-      medium: integer,
-      semibold: integer,
-      bold: integer,
-      extrabold: integer,
-      black: integer,
-    },
+      hairline: integer
+      thin: integer
+      light: integer
+      normal: integer
+      medium: integer
+      semibold: integer
+      bold: integer
+      extrabold: integer
+      black: integer
+    }
+    screenMedias: {
+      sl: string
+      lg: string
+      md: string
+    }
+    Gutters: {
+      gutterY: string
+      gutterX: string
+    }
   }
 }

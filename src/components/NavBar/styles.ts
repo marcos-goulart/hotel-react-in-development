@@ -110,7 +110,7 @@ export const NavContainer = styled.nav<ContainerProps>`
           border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
         &:hover {
-          background-color: ${(props) => props.theme.colors.secondary};
+          background-color: ${(props) => props.theme.colors.orange2};
         }
       }
     }
@@ -142,23 +142,22 @@ export const NavContainer = styled.nav<ContainerProps>`
         flex-basis: auto;
         justify-content: flex-end !important;
 
+        ul {
+          flex-direction: row;
 
-      ul {
-        flex-direction: row;
+          .mobile-button {
+            display: none !important;
+          }
 
-        .mobile-button {
-          display: none !important;
-        }
+          .desktop-button {
+            display: block !important;
 
-        .desktop-button {
-          display: block !important;
-
-          a {
-            padding-left: 3rem;
-            padding-right: 3rem;
+            a {
+              padding-left: 3rem;
+              padding-right: 3rem;
+            }
           }
         }
-      }
       }
     }
   }

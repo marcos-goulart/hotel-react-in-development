@@ -12,12 +12,16 @@ const rem = (px: number) => `${round(px / 16)}rem`
 export const theme: DefaultTheme = {
   colors: {
     bgColor: '#f8f9fa',
+    phColor: '#6c757d',
+    bgBrown1: '#757575',
+    bgBrown2: '#f4f4f4',
     white: '#FFFFFF',
     black1: 'rgba(0, 0, 0, 0.9)',
     black2: 'rgba(0, 0, 0, 0.55)',
     black3: 'rgba(0,0,0,.1)',
     red: '#E03131',
     orange: '#F46A05',
+    orange2: '#D85F08',
     yellow: '#FCC419',
     green: '#23DB42',
     teal: '#89DD13',
@@ -36,13 +40,12 @@ export const theme: DefaultTheme = {
     gray800: '#1D1E21',
     gray900: '#141518',
     primary: '#F83600',
-    secondary: '#D85F08',
   },
   fontFamily: {
     heading: ['IBM Plex Sans', 'sans-serif'].join(','),
     sans: ['Open Sans', 'Arial', 'Helvetica', 'sans-serif'].join(','),
     mono: ['IBM Plex Mono', 'serif'].join(','),
-    ruda: ['Ruda', 'sans-serif'].join(',')
+    ruda: ['Ruda', 'sans-serif'].join(','),
   },
   fontSize: {
     xs: rem(10),
@@ -66,6 +69,15 @@ export const theme: DefaultTheme = {
     bold: 700,
     extrabold: 800,
     black: 900,
+  },
+  screenMedias: {
+    sl: '576px',
+    md: '768px',
+    lg: '992px',
+  },
+  Gutters: {
+    gutterX: '1.5rem',
+    gutterY: '0',
   },
 }
 
