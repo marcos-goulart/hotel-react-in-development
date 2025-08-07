@@ -66,3 +66,14 @@ export const Main = styled.main`
     }
   }
 `
+
+export const HotelsContainer = styled.div`
+  row-gap: ${(props) => props.theme.Gutters.gutterX};
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(${(props) => props.theme.Gutters.gutterY} * -1);
+  margin-right: calc(${(props) => props.theme.Gutters.gutterX} / -2);
+  margin-left: calc(${(props) => props.theme.Gutters.gutterX} / -2);
+  margin-bottom: 1.5rem !important;
+  text-align: left;
+`
