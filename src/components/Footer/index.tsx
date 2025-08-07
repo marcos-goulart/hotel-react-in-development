@@ -1,7 +1,26 @@
-import { Container } from "./styles";
+import { useAuth } from '../../hooks/useAuth'
 
-export function Banner() {
+import { FooterContainer } from './styles'
+
+import { AdditionalInformationFooter } from './AdctionalInformationFooter'
+import { HotelFooter } from './HotelFooter'
+import { MyAccountFooter } from './MyAccountFooter'
+
+export function Footer() {
+  const { isLogged } = useAuth()
+
   return (
-    <Container></Container>
+    <FooterContainer>
+      <div className='container'>
+        <div className='row'>
+          <HotelFooter />
+          {isLogged && <MyAccountFooter />}
+          <AdditionalInformationFooter />
+        </div>
+      </div>
+      <div className='copy'>
+        <p>&copy; Todos os direitos reservados</p>
+      </div>
+    </FooterContainer>
   )
 }

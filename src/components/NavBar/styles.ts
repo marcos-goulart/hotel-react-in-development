@@ -22,6 +22,8 @@ export const NavContainer = styled.nav<ContainerProps>`
     justify-content: space-between;
     width: 100%;
     padding: 0.25rem 0.75rem !important;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
     margin-right: auto;
     margin-left: auto;
 
@@ -115,18 +117,18 @@ export const NavContainer = styled.nav<ContainerProps>`
       }
     }
   }
-  @media (min-width: 576px) {
+  @media (min-width: ${(props) => props.theme.screenMedias.sl}) {
     .container {
       max-width: 540px;
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${(props) => props.theme.screenMedias.md}) {
     .container {
       max-width: 720px;
     }
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: ${(props) => props.theme.screenMedias.lg}) {
     flex-flow: nowrap;
     justify-content: flex-start;
 
@@ -159,6 +161,18 @@ export const NavContainer = styled.nav<ContainerProps>`
           }
         }
       }
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screenMedias.xl}) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screenMedias.xxl}) {
+    .container {
+      max-width: 1320px;
     }
   }
 `

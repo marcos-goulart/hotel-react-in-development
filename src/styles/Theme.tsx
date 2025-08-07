@@ -1,4 +1,3 @@
-import { url } from 'inspector'
 import React, { ReactNode } from 'react'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
 
@@ -13,6 +12,7 @@ export const theme: DefaultTheme = {
   colors: {
     bgColor: '#f8f9fa',
     phColor: '#6c757d',
+    phColorHover: '#50565c',
     bgBrown1: '#757575',
     bgBrown2: '#f4f4f4',
     white: '#FFFFFF',
@@ -74,6 +74,8 @@ export const theme: DefaultTheme = {
     sl: '576px',
     md: '768px',
     lg: '992px',
+    xl: '1200px',
+    xxl: '1400px',
   },
   Gutters: {
     gutterX: '1.5rem',

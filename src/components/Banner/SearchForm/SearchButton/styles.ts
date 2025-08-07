@@ -26,6 +26,7 @@ export const Container = styled.div`
     cursor: pointer;
     user-select: none;
     border-radius: 0 !important;
+    padding: 0.375rem 0 0.375rem 0;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 

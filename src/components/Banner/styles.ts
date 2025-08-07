@@ -26,8 +26,8 @@ export const Main = styled.main`
     border-width: none;
     border-radius: 0.2rem;
     padding: 0.25rem !important;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
     position: relative;
     display: flex;
@@ -68,6 +68,18 @@ export const Main = styled.main`
     .card {
       padding: 1.5rem !important;
       padding-bottom: 0 !important;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screenMedias.xl}) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screenMedias.xxl}) {
+    .container {
+      max-width: 1320px;
     }
   }
 `

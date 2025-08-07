@@ -6,6 +6,7 @@ declare module 'styled-components' {
 
     colors: {
       phColor: string
+      phColorHover: string
       bgColor: string
       bgBrown1: string
       bgBrown2: string
@@ -66,8 +67,10 @@ declare module 'styled-components' {
     }
     screenMedias: {
       sl: string
-      lg: string
       md: string
+      lg: string
+      xl: string
+      xxl: string
     }
     Gutters: {
       gutterY: string
