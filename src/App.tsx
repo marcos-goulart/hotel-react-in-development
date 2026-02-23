@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { AppRoutes } from './routes'
 
-import { AppThemeProvider } from './styles/ThemeProvider'
+import { AppThemeProvider } from './styles/themeProvider'
 import { GlobalStyle } from './styles/global'
 import { Normalize } from 'styled-normalize'
 import { AuthProvider } from './context/AuthContext'
