@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { SectionLinkButton } from '../SectionLinkButton'
 
 export const Main = styled.main`
   padding-bottom: 3rem !important;
@@ -76,4 +77,27 @@ export const HotelsContainer = styled.div`
   margin-left: calc(${(props) => props.theme.Gutters.gutterX} / -2);
   margin-bottom: 1.5rem !important;
   text-align: left;
+`
+
+export const ViewAllWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+export const ViewAllButton = styled(SectionLinkButton)`
+  color: ${(props) => props.theme.colors.orange};
+  background-color: transparent;
+  border: 1px solid ${(props) => props.theme.colors.orange};
+  border-radius: 0.25rem;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.375rem 1.5rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.white};
+    background-color: ${(props) => props.theme.colors.orange};
+    border-color: ${(props) => props.theme.colors.orange};
+  }
 `

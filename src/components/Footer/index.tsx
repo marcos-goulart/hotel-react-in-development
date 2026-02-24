@@ -2,7 +2,7 @@ import { useAuth } from '../../hooks/useAuth'
 
 import { FooterContainer } from './styles'
 
-import { AdditionalInformationFooter } from './AdctionalInformationFooter'
+import { AdditionalInformationFooter } from './AdditionalInformationFooter'
 import { HotelFooter } from './HotelFooter'
 import { MyAccountFooter } from './MyAccountFooter'
 

@@ -1,6 +1,6 @@
 import { Banner } from '../../components/Banner'
 import { Carousel } from '../../components/Carousel'
-import { Diferentials } from '../../components/Diferentials'
+import { Differentials } from '../../components/Differentials'
 import { Footer } from '../../components/Footer'
 import { Highlights } from '../../components/Highlights'
 import { Navbar } from '../../components/NavBar'
@@ -13,7 +13,7 @@ export default function Main() {
       <Navbar />
       <Banner />
       <Highlights />
-      <Diferentials />
+      <Differentials />
       <Carousel />
       <Footer />
     </Container>

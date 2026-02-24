@@ -1,6 +1,7 @@
-import type { HighlightHotelInterface } from '../../../interfaces/HighlightHotel'
+import type { HighlightHotelProps } from '../../../interfaces/Hotel'
 import { Div } from './styles'
-export function HighlightHotel({ hotel }: HighlightHotelInterface) {
+
+export function HighlightHotel({ hotel }: HighlightHotelProps) {
   return (
     <Div className='beforeCard'>
       <div className='card'>
