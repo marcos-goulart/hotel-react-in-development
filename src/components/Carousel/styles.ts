@@ -152,6 +152,36 @@ export const Main = styled.main`
     background: white;
   }
 
+  @media (min-width: ${(props) => props.theme.screenMedias.sl}) {
+    .container {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screenMedias.md}) {
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screenMedias.lg}) {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screenMedias.xl}) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screenMedias.xxl}) {
+    .container {
+      max-width: 1320px;
+    }
+  }
+
   @media (max-width: ${(props) => props.theme.screenMedias.md}) {
     .carouselViewport {
       height: 350px;

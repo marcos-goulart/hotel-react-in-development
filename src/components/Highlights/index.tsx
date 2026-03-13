@@ -1,5 +1,5 @@
 import { hotelList } from '../../mocks/hotels'
-import { HighlightHotel } from './HighlightHotel'
+import { HotelCard } from '../HotelCard'
 import { Main, HotelsContainer, ViewAllButton, ViewAllWrapper } from './styles'
 
 export function Highlights() {
@@ -9,7 +9,7 @@ export function Highlights() {
         <h1>Hoteis e pousadas em destaque</h1>
         <HotelsContainer>
           {hotelList.map((hotel) => (
-            <HighlightHotel key={hotel.id} hotel={hotel} />
+            <HotelCard key={hotel.id} hotel={hotel} />
           ))}
         </HotelsContainer>
         <ViewAllWrapper>

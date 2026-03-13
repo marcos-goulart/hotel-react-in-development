@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Div = styled.div`
+export const Div = styled.div<{ $isPromotion?: boolean }>`
   margin-bottom: 3rem !important;
   flex: 0 0 auto;
   width: 100%;
@@ -32,9 +32,10 @@ export const Div = styled.div`
         vertical-align: middle;
       }
 
-      span {
+      .priceBadge {
         color: ${(props) => props.theme.colors.white};
-        background-color: ${(props) => props.theme.colors.orange};
+        background-color: ${(props) =>
+          props.$isPromotion ? props.theme.colors.darkGreen : props.theme.colors.orange};
         right: 0px;
         padding-left: 0.5rem !important;
         padding-bottom: 0.25rem !important;
@@ -42,6 +43,19 @@ export const Div = styled.div`
         padding-top: 0.25rem !important;
         bottom: 0 !important;
         position: absolute !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .priceOld {
+          opacity: 0.85;
+          text-decoration: line-through;
+          font-size: 0.9rem;
+        }
+
+        .priceNew {
+          font-weight: 700;
+        }
       }
     }
 
@@ -86,8 +100,12 @@ export const Div = styled.div`
         border: 1px solid transparent;
         padding: 0.375rem 0.75rem;
         border-radius: 0.25rem;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+        transition:
+          color 0.15s ease-in-out,
+          background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out,
+          box-shadow 0.15s ease-in-out,
+          transform 0.15s ease-in-out;
 
         &:hover {
           background-color: ${(props) => props.theme.colors.orange2};
@@ -95,7 +113,9 @@ export const Div = styled.div`
       }
     }
   }
+
   transition: transform 0.15s ease-in-out;
+
   &:hover {
     transform: scale(1.05);
   }

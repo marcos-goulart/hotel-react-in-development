@@ -3,10 +3,7 @@ export interface Hotel {
   image: string
   name: string
   location: string
-  description: string
+  description?: string
   price: number
-}
-
-export interface HighlightHotelProps {
-  hotel: Hotel
+  discountPrice?: number
 }
