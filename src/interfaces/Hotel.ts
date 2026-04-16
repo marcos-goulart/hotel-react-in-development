@@ -6,4 +6,11 @@ export interface Hotel {
   description?: string
   price: number
   discountPrice?: number
+  availability?: boolean
+  featured?: boolean
+  promoted?: boolean
+}
+
+export interface HotelRecord extends Omit<Hotel, 'image'> {
+  imageKey: string
 }

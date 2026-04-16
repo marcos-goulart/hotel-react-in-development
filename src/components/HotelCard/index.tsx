@@ -1,5 +1,5 @@
 import type { Hotel } from '../../interfaces/Hotel'
-import { Div } from './styles'
+import { AvailabilityButton, Div } from './styles'
 
 interface HotelCardProps {
   hotel: Hotel
@@ -38,7 +38,9 @@ export function HotelCard({ hotel, hasDiscount }: HotelCardProps) {
           <h5>{hotel.name}</h5>
           <p className='location'>{hotel.location}</p>
           {hotel.description ? <p className='description'>{hotel.description}</p> : null}
-          <button type='button'>Verificar disponibilidade</button>
+          <AvailabilityButton className='availabilityButton' to={`/pre-reserva/${hotel.id}`} state={{ hotel }}>
+            Verificar disponibilidade
+          </AvailabilityButton>
         </div>
       </div>
     </Div>

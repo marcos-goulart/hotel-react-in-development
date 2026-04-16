@@ -1,14 +1,18 @@
-import { hotelList } from '../../mocks/hotels'
+import type { Hotel } from '../../interfaces/Hotel'
 import { HotelCard } from '../HotelCard'
 import { Main, HotelsContainer, ViewAllButton, ViewAllWrapper } from './styles'
 
-export function Highlights() {
+interface HighlightsProps {
+  hotels: Hotel[]
+}
+
+export function Highlights({ hotels }: HighlightsProps) {
   return (
     <Main>
       <div className='container'>
         <h1>Hoteis e pousadas em destaque</h1>
         <HotelsContainer>
-          {hotelList.map((hotel) => (
+          {hotels.map((hotel) => (
             <HotelCard key={hotel.id} hotel={hotel} />
           ))}
         </HotelsContainer>

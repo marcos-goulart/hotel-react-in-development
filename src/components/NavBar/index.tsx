@@ -1,17 +1,26 @@
 import { useState } from 'react'
-import { Button, NavContainer } from './styles'
+import { useLocation } from 'react-router-dom'
+import { BrandLink, Button, NavContainer, NavLinkItem } from './styles'
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen)
   }
 
+  const handleCloseMenu = () => {
+    setMenuOpen(false)
+  }
+
   return (
     <NavContainer isMenuOpen={menuOpen}>
       <div className='container'>
-        <a href='/'>Hotel Samurai</a>
+        <BrandLink to='/' onClick={handleCloseMenu}>
+          Hotel Samurai
+        </BrandLink>
         <button type='button' onClick={handleToggleMenu}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -30,11 +39,17 @@ export function Navbar() {
         </button>
         <div className='navbar-collapse'>
           <ul>
-            <li className='mobile-button' style={{ display: menuOpen ? 'block' : 'none'}}>
-              <Button to={"/login"} className='btn-orange'>Login</Button>
-            </li>
-            <li className='desktop-button'>
-              <Button to={"/login"} className='btn-orange'>Login</Button>
+            {!isHomePage ? (
+              <li className='nav-item mobile-home-button'>
+                <NavLinkItem to='/' className='nav-home-link' onClick={handleCloseMenu}>
+                  Home
+                </NavLinkItem>
+              </li>
+            ) : null}
+            <li className='nav-item login-button-item'>
+              <Button to='/login' className='btn-orange' onClick={handleCloseMenu}>
+                Login
+              </Button>
             </li>
           </ul>
         </div>

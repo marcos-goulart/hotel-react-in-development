@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Div = styled.div<{ $isPromotion?: boolean }>`
@@ -82,7 +83,7 @@ export const Div = styled.div<{ $isPromotion?: boolean }>`
         margin-bottom: 1rem;
       }
 
-      button {
+      .availabilityButton {
         color: ${(props) => props.theme.colors.white};
         background-color: ${(props) => props.theme.colors.orange};
         outline: none;
@@ -100,6 +101,7 @@ export const Div = styled.div<{ $isPromotion?: boolean }>`
         border: 1px solid transparent;
         padding: 0.375rem 0.75rem;
         border-radius: 0.25rem;
+        text-decoration: none;
         transition:
           color 0.15s ease-in-out,
           background-color 0.15s ease-in-out,
@@ -128,5 +130,11 @@ export const Div = styled.div<{ $isPromotion?: boolean }>`
   @media (min-width: ${(props) => props.theme.screenMedias.lg}) {
     flex: 0 0 auto;
     width: 33.3333333333%;
+  }
+`
+
+export const AvailabilityButton = styled(Link)`
+  &.availabilityButton {
+    text-decoration: none;
   }
 `

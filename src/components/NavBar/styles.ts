@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 interface ContainerProps {
@@ -27,7 +27,7 @@ export const NavContainer = styled.nav<ContainerProps>`
     margin-right: auto;
     margin-left: auto;
 
-    a {
+    .brandLink {
       padding-top: 0.3125rem;
       padding-bottom: 0.3125rem;
       margin-right: 1rem;
@@ -60,6 +60,7 @@ export const NavContainer = styled.nav<ContainerProps>`
   }
 
   .navbar-collapse {
+    display: ${({ isMenuOpen }) => (isMenuOpen ? 'block' : 'none')};
     width: 100%;
 
     ul {
@@ -67,25 +68,41 @@ export const NavContainer = styled.nav<ContainerProps>`
       flex-direction: column;
       padding-left: 0;
       margin-top: 0;
+      list-style: none;
 
-      .desktop-button {
-        display: none;
+      .nav-item {
+        padding: 0.5rem 0;
+
+        a {
+          color: ${(props) => props.theme.colors.black2};
+          text-decoration: none;
+          font-size: ${(props) => props.theme.fontSize.base};
+          transition: color 0.15s ease-in-out;
+
+          &:hover {
+            color: ${(props) => props.theme.colors.orange};
+          }
+        }
       }
 
-      ${({ isMenuOpen }) =>
-        isMenuOpen
-          ? css`
-              .navbar-collapse {
-                display: flex;
-              }
-            `
-          : css`
-              .navbar-collapse {
-                display: none;
-              }
-            `}
+      .mobile-home-button {
+        .nav-home-link {
+          background-color: ${(props) => props.theme.colors.gray200};
+          border: 1px solid ${(props) => props.theme.colors.gray300};
+          color: ${(props) => props.theme.colors.black1};
+          width: 100%;
+          display: inline-block;
+          text-align: center;
+          padding: 0.375rem 0.75rem;
 
-      .mobile-button {
+          &:hover {
+            background-color: ${(props) => props.theme.colors.gray300};
+            color: ${(props) => props.theme.colors.black1};
+          }
+        }
+      }
+
+      .login-button-item {
         padding: 0.5rem 0;
       }
 
@@ -147,16 +164,35 @@ export const NavContainer = styled.nav<ContainerProps>`
         ul {
           flex-direction: row;
 
-          .mobile-button {
-            display: none !important;
+          .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin-right: 2rem;
           }
 
-          .desktop-button {
-            display: block !important;
+          .login-button-item {
+            margin-right: 0;
 
             a {
               padding-left: 3rem;
               padding-right: 3rem;
+            }
+          }
+
+          .mobile-home-button {
+            .nav-home-link {
+              width: auto;
+              display: inline;
+              padding: 0;
+              background-color: transparent;
+              border: 0;
+              color: ${(props) => props.theme.colors.black2};
+
+              &:hover {
+                background-color: transparent;
+                color: ${(props) => props.theme.colors.orange};
+              }
             }
           }
         }
@@ -176,4 +212,10 @@ export const NavContainer = styled.nav<ContainerProps>`
     }
   }
 `
+export const BrandLink = styled(Link).attrs({
+  className: 'brandLink',
+})``
+
+export const NavLinkItem = styled(Link)``
+
 export const Button = styled(Link)``
