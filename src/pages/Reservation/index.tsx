@@ -15,6 +15,8 @@ import {
   FormGrid,
   MainContent,
   Notice,
+  ReservationSkeletonForm,
+  ReservationSkeletonSummary,
   StatusBadge,
   SummaryCard,
   TitleBlock,
@@ -93,7 +95,39 @@ export default function ReservationPage() {
           </TitleBlock>
 
           {isLoading ? (
-            <EmptyState>Carregando informacoes do hotel...</EmptyState>
+            <div className='contentGrid' aria-hidden='true'>
+              <ReservationSkeletonSummary>
+                <div className='image' />
+                <div className='summaryContent'>
+                  <div className='line title' />
+                  <div className='line location' />
+                  <div className='stars'>
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <div key={`reservation-skeleton-star-${index}`} className='star' />
+                    ))}
+                  </div>
+                  <div className='line price' />
+                  <div className='badge' />
+                  <div className='line description' />
+                  <div className='line description short' />
+                </div>
+              </ReservationSkeletonSummary>
+
+              <ReservationSkeletonForm>
+                <div className='fieldGrid'>
+                  {reservationFields.map((field) => (
+                    <div key={`reservation-skeleton-field-${field.id}`} className={`field ${field.className}`}>
+                      <div className='label' />
+                      <div className='input' />
+                    </div>
+                  ))}
+                </div>
+
+                <div className='actions'>
+                  <div className='button' />
+                </div>
+              </ReservationSkeletonForm>
+            </div>
           ) : !hotel ? (
             <EmptyState>Hotel nao encontrado. Volte para a Home e escolha outra hospedagem.</EmptyState>
           ) : (

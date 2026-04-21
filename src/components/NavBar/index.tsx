@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import type { FormEvent } from 'react'
+import { FaSearch } from 'react-icons/fa'
 import { useLocation } from 'react-router-dom'
-import { BrandLink, Button, NavContainer, NavLinkItem } from './styles'
+import { BrandLink, Button, NavContainer, NavLinkItem, SearchButton, SearchForm, SearchInput } from './styles'
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -15,13 +17,17 @@ export function Navbar() {
     setMenuOpen(false)
   }
 
+  const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+  }
+
   return (
     <NavContainer isMenuOpen={menuOpen}>
       <div className='container'>
         <BrandLink to='/' onClick={handleCloseMenu}>
           Hotel Samurai
         </BrandLink>
-        <button type='button' onClick={handleToggleMenu}>
+        <button type='button' className='menu-toggle' onClick={handleToggleMenu}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='1.5em'
@@ -37,6 +43,16 @@ export function Navbar() {
             />
           </svg>
         </button>
+        {!isHomePage ? (
+          <div className='nav-search-row'>
+            <SearchForm onSubmit={handleSearchSubmit}>
+              <SearchInput type='search' placeholder='Pesquisar hotel' aria-label='Pesquisar hotel por nome' />
+              <SearchButton type='submit' aria-label='Buscar hotel'>
+                <FaSearch aria-hidden='true' />
+              </SearchButton>
+            </SearchForm>
+          </div>
+        ) : null}
         <div className='navbar-collapse'>
           <ul>
             {!isHomePage ? (

@@ -19,7 +19,7 @@ export function Promotions({ hotels }: PromotionsProps) {
           ))}
         </PromotionsContainer>
         <ViewAllWrapper>
-          <ViewAllButton to="/">Visualizar Todos</ViewAllButton>
+          <ViewAllButton to='/hoteis/promocoes'>Visualizar Todos</ViewAllButton>
         </ViewAllWrapper>
       </div>
     </Main>

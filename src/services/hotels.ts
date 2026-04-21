@@ -2,6 +2,8 @@ import type { Hotel, HotelRecord } from '../interfaces/Hotel'
 import { fallbackHotels, resolveHotelRecord } from '../mocks/hotelRecords'
 import api from './api'
 
+export type HotelCategory = 'destaques' | 'promocoes'
+
 function isHotelRecord(record: unknown): record is HotelRecord {
   if (typeof record !== 'object' || record === null) {
     return false
@@ -36,4 +38,18 @@ export async function getHotelById(hotelId: string): Promise<Hotel | null> {
   const hotels = await getHotels()
 
   return hotels.find((hotel) => hotel.id === hotelId) ?? null
+}
+
+export async function getHotelsByCategory(category: HotelCategory): Promise<Hotel[]> {
+  const hotels = await getHotels()
+
+  if (category === 'promocoes') {
+    return hotels.filter((hotel) => hotel.promoted)
+  }
+
+  return hotels.filter((hotel) => hotel.featured)
+}
+
+export function isHotelCategory(category: string | undefined): category is HotelCategory {
+  return category === 'destaques' || category === 'promocoes'
 }

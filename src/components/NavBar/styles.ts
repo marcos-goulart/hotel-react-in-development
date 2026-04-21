@@ -17,7 +17,7 @@ export const NavContainer = styled.nav<ContainerProps>`
 
   .container {
     display: flex;
-    flex-wrap: inherit;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -28,6 +28,8 @@ export const NavContainer = styled.nav<ContainerProps>`
     margin-left: auto;
 
     .brandLink {
+      order: 1;
+      flex: 0 0 auto;
       padding-top: 0.3125rem;
       padding-bottom: 0.3125rem;
       margin-right: 1rem;
@@ -38,7 +40,9 @@ export const NavContainer = styled.nav<ContainerProps>`
       white-space: nowrap;
     }
 
-    button {
+    .menu-toggle {
+      order: 3;
+      flex: 0 0 auto;
       padding: 0.25rem 0.75rem;
       font-size: ${(props) => props.theme.fontSize.xl};
       line-height: 1;
@@ -57,11 +61,84 @@ export const NavContainer = styled.nav<ContainerProps>`
         text-decoration: none;
       }
     }
+
+    .nav-search-row {
+      order: 2;
+      flex: 1 1 10rem;
+      min-width: 0;
+      margin-right: 0.75rem;
+    }
+
+    .hotel-search {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      background-color: ${(props) => props.theme.colors.white};
+      border: 1px solid ${(props) => props.theme.colors.gray300};
+      border-radius: 0.375rem;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    }
+
+    .hotel-search-input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      background-color: transparent;
+      color: ${(props) => props.theme.colors.black1};
+      padding: 0.75rem 1rem;
+      font-family: inherit;
+      font-size: ${(props) => props.theme.fontSize.base};
+      border-radius: 0;
+      outline: none;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      &::placeholder {
+        color: ${(props) => props.theme.colors.phColor};
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .hotel-search:focus-within {
+      border-color: ${(props) => props.theme.colors.orange};
+      box-shadow: 0 0 0 3px rgba(244, 106, 5, 0.12);
+    }
+
+    .hotel-search-button {
+      border: 0;
+      border-left: 1px solid ${(props) => props.theme.colors.gray300};
+      background-color: transparent;
+      color: ${(props) => props.theme.colors.gray500};
+      font-family: inherit;
+      font-size: ${(props) => props.theme.fontSize.base};
+      width: 3.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 0;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+      &:hover {
+        color: ${(props) => props.theme.colors.orange};
+        background-color: #fff8f2;
+      }
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
   }
 
   .navbar-collapse {
+    order: 4;
     display: ${({ isMenuOpen }) => (isMenuOpen ? 'block' : 'none')};
     width: 100%;
+    margin-top: 0.75rem;
 
     ul {
       display: flex;
@@ -150,25 +227,47 @@ export const NavContainer = styled.nav<ContainerProps>`
     justify-content: flex-start;
 
     .container {
+      display: grid;
+      grid-template-columns: auto minmax(18rem, 1fr) auto;
+      column-gap: 1.25rem;
       max-width: 960px;
+      align-items: center;
 
-      button {
+      .menu-toggle {
         display: none;
+      }
+
+      .brandLink {
+        display: inline-flex;
+        margin-right: 0;
+      }
+
+      .nav-search-row {
+        width: 100%;
+        margin-top: 0;
+        margin-right: 0;
       }
 
       .navbar-collapse {
         display: flex !important;
         flex-basis: auto;
         justify-content: flex-end !important;
+        width: auto;
+        margin-top: 0;
 
         ul {
           flex-direction: row;
+          align-items: center;
 
           .nav-item {
             display: flex;
             align-items: center;
             padding: 0;
             margin-right: 2rem;
+          }
+
+          .hotel-search {
+            width: 100%;
           }
 
           .login-button-item {
@@ -219,3 +318,15 @@ export const BrandLink = styled(Link).attrs({
 export const NavLinkItem = styled(Link)``
 
 export const Button = styled(Link)``
+
+export const SearchForm = styled.form.attrs({
+  className: 'hotel-search',
+})``
+
+export const SearchInput = styled.input.attrs({
+  className: 'hotel-search-input',
+})``
+
+export const SearchButton = styled.button.attrs({
+  className: 'hotel-search-button',
+})``

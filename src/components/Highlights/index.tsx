@@ -17,7 +17,7 @@ export function Highlights({ hotels }: HighlightsProps) {
           ))}
         </HotelsContainer>
         <ViewAllWrapper>
-          <ViewAllButton to='/'>Visualizar Todos</ViewAllButton>
+          <ViewAllButton to='/hoteis/destaques'>Visualizar Todos</ViewAllButton>
         </ViewAllWrapper>
       </div>
     </Main>
