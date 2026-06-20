@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const Div = styled.div<{ $isPromotion?: boolean }>`
   margin-bottom: 3rem !important;
+  display: flex;
   flex: 0 0 auto;
   width: 100%;
   padding-right: calc(${(props) => props.theme.Gutters.gutterX} / 2);
@@ -16,12 +17,17 @@ export const Div = styled.div<{ $isPromotion?: boolean }>`
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
     min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
 
     .imgDiv {
       position: relative !important;
@@ -30,6 +36,8 @@ export const Div = styled.div<{ $isPromotion?: boolean }>`
         border-top-left-radius: calc(0.25rem - 1px);
         border-top-right-radius: calc(0.25rem - 1px);
         width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
         vertical-align: middle;
       }
 
@@ -61,6 +69,8 @@ export const Div = styled.div<{ $isPromotion?: boolean }>`
     }
 
     .cardBody {
+      display: flex;
+      flex-direction: column;
       padding: 1rem !important;
       flex: 1 1 auto;
 
@@ -80,38 +90,8 @@ export const Div = styled.div<{ $isPromotion?: boolean }>`
 
       .description {
         margin-top: 0;
-        margin-bottom: 1rem;
-      }
-
-      .availabilityButton {
-        color: ${(props) => props.theme.colors.white};
-        background-color: ${(props) => props.theme.colors.orange};
-        outline: none;
-        box-shadow: none;
-        font-size: 1rem;
-        font-family: 'Ruda', sans-serif;
-        font-weight: 400;
-        width: 100% !important;
-        display: inline-block;
-        line-height: 1.5;
-        text-align: center;
-        vertical-align: middle;
-        cursor: pointer;
-        user-select: none;
-        border: 1px solid transparent;
-        padding: 0.375rem 0.75rem;
-        border-radius: 0.25rem;
-        text-decoration: none;
-        transition:
-          color 0.15s ease-in-out,
-          background-color 0.15s ease-in-out,
-          border-color 0.15s ease-in-out,
-          box-shadow 0.15s ease-in-out,
-          transform 0.15s ease-in-out;
-
-        &:hover {
-          background-color: ${(props) => props.theme.colors.orange2};
-        }
+        margin-bottom: 0;
+        flex: 1 1 auto;
       }
     }
   }
@@ -133,8 +113,4 @@ export const Div = styled.div<{ $isPromotion?: boolean }>`
   }
 `
 
-export const AvailabilityButton = styled(Link)`
-  &.availabilityButton {
-    text-decoration: none;
-  }
-`
+export const CardLink = styled(Link)``

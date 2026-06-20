@@ -1,5 +1,5 @@
 import type { Hotel } from '../../interfaces/Hotel'
-import { AvailabilityButton, Div } from './styles'
+import { CardLink, Div } from './styles'
 
 interface HotelCardProps {
   hotel: Hotel
@@ -14,7 +14,7 @@ export function HotelCard({ hotel, hasDiscount }: HotelCardProps) {
 
   return (
     <Div $isPromotion={isPromotion}>
-      <div className='card'>
+      <CardLink className='card' to={`/pre-reserva/${hotel.id}`} state={{ hotel }}>
         <div className='imgDiv'>
           <img src={hotel.image} alt={hotel.name} className='card-img-top' />
           <span className='priceBadge'>
@@ -38,11 +38,8 @@ export function HotelCard({ hotel, hasDiscount }: HotelCardProps) {
           <h5>{hotel.name}</h5>
           <p className='location'>{hotel.location}</p>
           {hotel.description ? <p className='description'>{hotel.description}</p> : null}
-          <AvailabilityButton className='availabilityButton' to={`/pre-reserva/${hotel.id}`} state={{ hotel }}>
-            Verificar disponibilidade
-          </AvailabilityButton>
         </div>
-      </div>
+      </CardLink>
     </Div>
   )
 }

@@ -43,6 +43,7 @@ export const Main = styled.main`
 
         .beforeCard {
           margin-bottom: 1.5rem !important;
+          display: flex;
           flex: 0 0 auto;
           width: 100%;
           flex-shrink: 0;
@@ -56,6 +57,8 @@ export const Main = styled.main`
             position: relative;
             display: flex;
             flex-direction: column;
+            width: 100%;
+            height: 100%;
             min-width: 0;
             word-wrap: break-word;
             background-color: ${(props) => props.theme.colors.white};
@@ -67,9 +70,13 @@ export const Main = styled.main`
               border-top-left-radius: calc(0.25rem - 1px);
               border-top-right-radius: calc(0.25rem - 1px);
               width: 100%;
+              aspect-ratio: 16 / 9;
+              object-fit: cover;
             }
 
             .cardBody {
+              display: flex;
+              flex-direction: column;
               flex: 1 1 auto;
               padding: 1rem 1rem;
 
